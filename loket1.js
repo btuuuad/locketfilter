@@ -3,7 +3,7 @@ var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
 var obj = JSON.parse($response.body);
 
 if (ua.includes("Locket")) {
-    obj.Attention = "Chúc mừng bạn! Vui lòng không sử dụng chúng dưới mục đích thương mại!";
+    obj.Attention = "Chúc mừng bạn!";
     obj.entries = obj.entries || {};
 
     // ============================================================
@@ -44,7 +44,7 @@ if (ua.includes("Locket")) {
             profile_banner: true
         }),
         feature_discovery_popup_config: JSON.stringify({
-            tag: "LOCKET GOLD ALL FEATURES",
+            tag: "LOCKET GOLD ",
             tag_gradient: true,
             tag_style: "gold_gradient",
             title: "Lên Locket Gold rồi đó 😎",
