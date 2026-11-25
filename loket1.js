@@ -1,9 +1,8 @@
-
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
 var obj = JSON.parse($response.body);
 
 if (ua.includes("Locket")) {
-    obj.Attention = "Chúc mừng bạn!";
+    obj.Attention = "Chúc mừng bạn! Vui lòng không sử dụng chúng dưới mục đích thương mại!";
     obj.entries = obj.entries || {};
 
     // ============================================================
@@ -44,18 +43,18 @@ if (ua.includes("Locket")) {
             profile_banner: true
         }),
         feature_discovery_popup_config: JSON.stringify({
-            tag: "LOCKET GOLD ",
+            tag: "LOCKET GOLD SUPER",
             tag_gradient: true,
             tag_style: "gold_gradient",
-            title: "Lên Locket Gold rồi đó 😎",
+            title: "Locket gold prenium ",
             feature_set: [
                 {
-                    title: " HEHE SHOP TÚ BỈM XIN CHÀO ✨",
-                    body: "Ủng hộ Bỉm nhó 💛",
-                    imageURL: "https://ibb.co/kfYKt9c"
+                    title: "HEHE lên gold rồi đó ✨",
+                    body: " Happy new day💛",
+                    imageURL: "https://i.ibb.co/9LRn7VY/DORAEMON.jpg"
                 }
             ],
-            primary_button_title: "Xong",
+            primary_button_title: "Xong rồi nhé!",
             campaign: "locket_gold_welcome_v3",
             start_at: "2020-01-01T00:00:00",
             end_at: "2099-12-31T23:59:59",
@@ -64,6 +63,8 @@ if (ua.includes("Locket")) {
         android_subscribe_gold_button_enabled: "false",
         profile_badge_visible: "true",
         lunar_new_year_app_icon_enabled: "true",
+        settings_instagram_url: "https://www.instagram.com/dvinh.09/",
+        settings_tiktok_url: "https://tiktok.com/@duyvinh.09",
         star_sign_caption_image_url: "https://storage.googleapis.com/locket-public/overlays/star_signs",
     });
 
@@ -604,7 +605,9 @@ if (ua.includes("Locket")) {
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
             uid: "blank",
-            url: "https://ibb.co/r2b3NrzW",
+            // url: "https://i.ibb.co/vC8b93Ld/ig.png",
+            url: "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
+            // url: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
@@ -752,7 +755,7 @@ if (ua.includes("Locket")) {
                 ]
             },
             {
-                section: "🎨 Decorative by Tú Bỉm",
+                section: "🎨 Decorative by Tubim",
                 items: [
                     { overlay_id: "caption:tubim07", source: "remote", caption: { background: { colors: ["#B8E7FF", "#A8F5D0", "#DCCBFF"] }, icon: { data: "tortoise.fill", type: "sf_symbol", color: "#183153" }, max_lines: 1, text: "tubim07", text_color: "#183153", type: "static_content" } },
                     // { overlay_id: "caption:vu", source: "remote", caption: { background: { colors: ["#FFB6C1", "#FF69B4", "#FFC0CB"] }, icon: { data: "crown.fill", type: "sf_symbol", color: "#183153" }, max_lines: 1, text: "Vũ Bá Khí", text_color: "#183153", type: "static_content" } },
@@ -1052,8 +1055,6 @@ if (ua.includes("Locket")) {
                     { overlay_id: "caption:tuyen_duong", source: "remote", caption: { background: { colors: ["#D94A77", "#B82D59"] }, icon: { data: "checkmark.seal.fill", type: "sf_symbol" }, max_lines: 1, text: "Locket tuyên dương bạn cute", text_color: "#FFFFFF", type: "static_content" } },
                 ]
             },
-        }
-    ];
         ])
     });
 }
