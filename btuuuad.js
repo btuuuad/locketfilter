@@ -1,9 +1,3 @@
-// ========= ID ========= //
-const mapping = {
-  'Locket': ['Gold']
-};
-// =========   Phần cố định  ========= // 
-// =========  @btuuuad ========= // 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"],
     obj = JSON.parse($response.body);
 
