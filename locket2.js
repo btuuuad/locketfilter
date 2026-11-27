@@ -621,7 +621,7 @@ if (ua.includes("Locket")) {
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
             uid: "blank",
-            url: "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
+            url: "https://i.ibb.co/chbwVnZm/frame-765c6888c9982b76df1b108d.webp",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
