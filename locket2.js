@@ -69,7 +69,7 @@ if (ua.includes("Locket")) {
     });
 
     // ============================================================
-    // 2. CHẶN QUẢNG CÁO & TẮT TRACKING (SENTRY)
+    // 2. CHẶN QUẢNG CÁO & TẮT TRACKING
     // ============================================================
     Object.assign(obj.entries, {
         history_ads_mode: "off",
@@ -270,6 +270,15 @@ if (ua.includes("Locket")) {
         makePhotoboothFilter("cmt_anhdim", "Bạn Thân Giữ Ảnh Dìm", "https://locket.dinhduyvinh.tech/images/cmt_anhdim.png", ["#EF4444", "#22D3EE"], "Trend Comment TikTok", { sfSymbol: "bubble.left.fill" })
     ];
     
+    // NEW: DAZZ CAM FILTERS
+    var dazzCamFilters = [
+        makePhotoboothFilter("dazz_cpm35", "CPM35 Film", "https://locket.dinhduyvinh.tech/images/photo_effect_film.png", ["#3A3A3A", "#D3D3D3"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "camera.fill" }),
+        makePhotoboothFilter("dazz_classic_u", "Classic U", "https://locket.dinhduyvinh.tech/images/photo_effect_co_dien.png", ["#5A3E2B", "#E5C8A6"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "camera.aperture" }),
+        makePhotoboothFilter("dazz_d_half", "D Half", "https://locket.dinhduyvinh.tech/images/photo_effect_lo_sang_film.png", ["#1C1C1C", "#F0E68C"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "film.fill" }),
+        makePhotoboothFilter("dazz_inst_c", "Inst C", "https://locket.dinhduyvinh.tech/images/photo_effect_pastel.png", ["#FFB6C1", "#E6E6FA"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "camera.retro.fill" }),
+        makePhotoboothFilter("dazz_grd", "GR D", "https://locket.dinhduyvinh.tech/images/photo_effect_trang_den.png", ["#111111", "#CCCCCC"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "camera.macro" })
+    ];
+
     var CameraFilters = [
         makePhotoboothFilter("photo_effect_co_dien", "Nâu Cổ Điển", "https://locket.dinhduyvinh.tech/images/photo_effect_co_dien.png", ["#8B5E3C", "#D6B990"], "Camera Filters", { sfSymbol: "camera.filters" }),
         makePhotoboothFilter("photo_effect_dem_xanh", "Đêm Xanh", "https://locket.dinhduyvinh.tech/images/photo_effect_dem_xanh.png", ["#172554", "#3B82A6"], "Camera Filters", { sfSymbol: "camera.filters" }),
@@ -290,15 +299,6 @@ if (ua.includes("Locket")) {
         makePhotoboothFilter("photo_effect_matcha", "Xanh Matcha", "https://locket.dinhduyvinh.tech/images/photo_effect_matcha.png", ["#71854B", "#C6D5A0"], "Camera Filters", { sfSymbol: "camera.filters" }),
         makePhotoboothFilter("photo_effect_tim_y2k", "Tím Y2K", "https://locket.dinhduyvinh.tech/images/photo_effect_tim_y2k.png", ["#8B5CF6", "#E7B5FF"], "Camera Filters", { sfSymbol: "camera.filters" }),
         makePhotoboothFilter("photo_effect_xanh_film", "Xanh Film", "https://locket.dinhduyvinh.tech/images/photo_effect_xanh_film.png", ["#50828B", "#B5D9D5"], "Camera Filters", { sfSymbol: "camera.filters" })
-    ];
-    
-    // NEW: DAZZ CAM FILTERS
-    var dazzCamFilters = [
-        makePhotoboothFilter("dazz_cpm35", "CPM35 Film", "https://locket.dinhduyvinh.tech/images/photo_effect_film.png", ["#3A3A3A", "#D3D3D3"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "camera.fill" }),
-        makePhotoboothFilter("dazz_classic_u", "Classic U", "https://locket.dinhduyvinh.tech/images/photo_effect_co_dien.png", ["#5A3E2B", "#E5C8A6"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "camera.aperture" }),
-        makePhotoboothFilter("dazz_d_half", "D Half", "https://locket.dinhduyvinh.tech/images/photo_effect_lo_sang_film.png", ["#1C1C1C", "#F0E68C"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "film.fill" }),
-        makePhotoboothFilter("dazz_inst_c", "Inst C", "https://locket.dinhduyvinh.tech/images/photo_effect_pastel.png", ["#FFB6C1", "#E6E6FA"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "camera.retro.fill" }),
-        makePhotoboothFilter("dazz_grd", "GR D", "https://locket.dinhduyvinh.tech/images/photo_effect_trang_den.png", ["#111111", "#CCCCCC"], "Dazz Cam", { filterType: "normal", overlay: false, sfSymbol: "camera.macro" })
     ];
 
     var AIFilters = [
@@ -380,7 +380,6 @@ if (ua.includes("Locket")) {
             sheet_filters: filter_groups,
             filter_groups: filter_groups,
             picker_filters: [
-                // PhotoBooth 4 ảnh 📸
                 "pb_khung4_scrapbook_do", "pb_khung4_inspire_arena", "pb_khung4_my_vault", "pb_khung4_cham_bi", "pb_khung4_cham_bi_den",
                 "pb_khung4_likeble", "pb_khung4_razzle", "pb_khung4_your_title", "pb_khung4_soulmate_film",
                 "pb_khung4_mimi", "pb_khung4_fairy_film",
@@ -388,67 +387,51 @@ if (ua.includes("Locket")) {
                 "pb_khung4_i_love_you", "pb_khung4_film", "pb_khung4_dream_cream", "pb_khung4_berry_days", "pb_khung4_scrapbook", "pb_khung4_so_cool",
                 "pb_khung4_happy_snap", "pb_khung4_sky_diary", "pb_khung4_4cut", "pb_khung4_holo_4cut", "pb_khung4_scrapbook_ripped_4cut",
                 "pb_khung4_ripped_paper_4cut", "pb_khung4_denim_ripped_2x2",
-                // Hai Đứa Một Khung 💞
                 "pb_khung2_soulmate", "pb_khung2_camera_pic", "pb_khung2_love_postcard",
                 "pb_khung2_anhdep", "pb_khung2_anhco", "pb_khung2_di_choi_thoi", "pb_khung2_thelove", "pb_khung2_outfit",
                 "pb_khung2_thu_tinh", "pb_khung2_len_do", "pb_khung2_tin_nong", "pb_khung2_thang_ngay_ben_nhau", "pb_khung2_may_anh",
                 "pb_khung2_ki_niem", "pb_khung2_khi_tinh_iu_den", "pb_khung2_khi_e_vang", "pb_khung2_dieu_em_uoc_ao",
-                // Bộ Ba Bá Đạo 🤟
                 "pb_khung3_photo_iphone", "pb_khung3_polaroid2", "pb_khung3_da_bao",
                 "pb_khung3_mothaiba",
                 "pb_khung3_ngay_mai_tuoi_sang", "pb_khung3_memory", "pb_khung3_Vinyl", "pb_khung3_Polaroid", "pb_khung3_photodump",
                 "pb_khung3_love_so_much", "pb_khung3_hoi_ban_than", "pb_khung3_hen_nha",
-                // Cư Dân Mạng Nói Gì 💬
                 "cmt_siuu", "cmt_sontung", "cmt_locket", "cmt_binh_luan_minh_tue", "cmt_xinh",
                 "cmt_posst", "cmt_flash", "cmt_duanma", "cmt_dichup", "cmt_chuano",
                 "cmt_anhdim",
-                // Dazz Cam Vintage 📼
                 "dazz_cpm35", "dazz_classic_u", "dazz_d_half", "dazz_inst_c", "dazz_grd",
-                // Camera Filter 🎞️
                 "photo_effect_co_dien", "photo_effect_dem_xanh", "photo_effect_film", "photo_effect_matte", "photo_effect_nhat",
                 "photo_effect_pastel", "photo_effect_teal_va_cam", "photo_effect_trang_den", "photo_effect_tuong_phan", "photo_effect_am_ap",
                 "photo_effect_mat_lanh", "photo_effect_am_mat_ong", "photo_effect_blue_hour", "photo_effect_film_nau", "photo_effect_hong_milk",
                 "photo_effect_lo_sang_film", "photo_effect_matcha", "photo_effect_tim_y2k", "photo_effect_xanh_film",
-                // Khung Viền Hot Trend 🖼️
                 "pb_khung1_locket_camera", "pb_khung1_spotifyPC", "pb_khung1_spotify_hong", "pb_khung1_camfuji", "pb_khung1_menu_ios",
                 "pb_khung1_iphone", "pb_khung1_tivi", "pb_khung1_the_gioi_cua_2_ta", "pb_khung1_Camera_iPhone", "pb_khung1_khong_buong",
                 "pb_khung1_selflove", "pb_khung1_thu_tinh", "pb_khung1_ptb", "pb_khung1_oi_tinh_yeu", "pb_khung1_card",
                 "pb_khung1_love_e_nhiu", "pb_khung1_ki_niem_tuoi_dep", "pb_khung1_ins", "pb_khung1_hoi_chieu_troi_mua", "pb_khung1_dia",
                 "pb_khung1_chuong_cuoi", "pb_khung1_maytinh", "pb_khung1_mat_tin_hieu",
-                // Trend Hot 🔥
                 "weekday_depth", "pb_khung1_chua_som",
                 "trend_bang_tin_khan", "trend_ve_giu_xe", "trend_vo_hoc_sinh", "trend_giao_vien_cham_bai", "trend_nhiem_vu_hom_nay_la",
                 "trend_hoa_don_di_choi", "trend_binh_luan_duoc_ghim", "trend_camera_an_ninh", "trend_thong_bao_ngan_hang",
                 "trend_chat_nhom_leak",
-                // Rạp Xiếc Trung Ương 🤪
                 "pb_khung3_fruit", "pb_khung1_mona_lisa", "pb_khung2_monkey", "pb_khung1_ronaldo_cup", "pb_khung1_messi",
                 "pb_khung2_cuoi_vespa",
                 "pb_khung1_the_hinh", "pb_khung1_anh_tho", "pb_khung1_matmoc",
-                // Khung Xinh Hết Cứu 🎀
                 "pb_khung1_cute", "pb_khung1_luffy", "pb_khung1_frame_classic_pb", "pb_khung1_hello_kitty_pastel_ngot_ngao",
                 "pb_khung1_hello_kitty_hong_pastel", "pb_khung1_pastel_vien_ren", "pb_khung1_hoa_pastel_vien_xanh_xinh", "pb_khung1_spiderred",
                 "pb_khung1_khong_gian_xanh_pastel", "pb_khung1_ngoi_sao_hong_pastel", "pb_khung1_pastel_so_hai_cau", "pb_khung1_shin_chan",
                 "pb_khung1_anh_hellokitty_v_sao", "pb_khung1_xanh_tay_sao_vang", "pb_khung1_sinh_nhat_hello_kitty", "pb_khung1_y2k_silver_holo",
                 "pb_khung1_denim_ripped", "pb_khung1_film_nostalgia", "pb_khung1_photobooth_cute",
-                // AI 3D Hot 🔥
                 "ai_fireworks", "ai_harry_potter", "ai_minecraft", "ai_fire_flame", "ai_giant_spider",
                 "ai_ocean_underwater", "ai_ufo_alien", "ai_sweet_hearts", "ai_volcano_lava", "ai_rain_storm",
                 "ai_fortnite_llama", "ai_watercolor_art", "ai_golden_hour",
-                // Hài hước
                 "okay_wig", "influencer", "looks_maxxing", "toothless", "bye_brows",
                 "ai_spooky_ghost", "ai_cute_zombie",
-                // Ngoại hình
                 "bowling_ball", "blonde_bleached", "beard", "bob_cut", "buns",
                 "tatted", "mohawk", "braces", "ai_rose_flower", "ai_jungle_leaf",
-                // Sự kiện
                 "pb_khung1_locket", "slimed", "princess", "disco_lights", "cash_money",
                 "happy_birthday",
-                // Dễ thương
                 "cutesy", "sticker_face", "flower_crown", "love_bug",
-                // Trang phục
                 "wedding", "cowboy_cowgirl", "giraffe", "clown", "ai_shrek_ogre",
                 "ai_superhero_cape", "ai_pirate_hat",
-                // Ngày lễ
                 "easter_bunney_cutout", "easter_chick_cutout", "bearded", "leprechaun", "lucky_face",
                 "elf_cutout", "santa_cutout", "frosty",
             ],
@@ -621,7 +604,7 @@ if (ua.includes("Locket")) {
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
             uid: "blank",
-            url: "https://i.ibb.co/chbwVnZm/frame-765c6888c9982b76df1b108d.webp",
+            url: "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
